@@ -121,3 +121,154 @@ button a:active{
 .box{
     border: 1px solid black;
 }
+
+.trickyGrid{
+    margin-top: 50px;
+}
+
+.trickyContainer{
+    display: grid;
+    gap: 10px;
+    grid-template-rows: 100px 100px 100px 100px 100px 500px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 150px;
+}
+
+.trickyBox{
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+/*Boites du premier exercice*/
+
+.one{
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+
+.two{
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.three{
+    grid-column: 3/4;
+    grid-row: 2/4;
+}
+
+.four{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.five{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.six{
+    grid-column: 1/3;
+    grid-row: 4/5;
+}
+
+.seven{
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+
+.eight{
+    grid-column: 1/4;
+    grid-row: 5/6;
+}
+
+/*Boites du deuxième exercice*/
+
+.secOne{
+    grid-column: 1/4;
+    grid-row:1/2;
+}
+
+.secTwo{
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+
+/*.secThree{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}*/
+
+/*.secFour{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}*/
+
+.secFive{
+    grid-column: 2/4;
+    grid-row: 3/4;
+}
+
+.secSix{
+    grid-column: 1/4;
+    grid-row: 4/5;
+}
+
+/*.secSeven{
+    grid-column: 1/2;
+    grid-row: 5/6;
+}*/
+
+.secEight{
+    grid-column: 2/4;
+    grid-row: 5/6;
+}
+
+.secNine{
+    grid-column: 1/4;
+}
+
+.recursiveContainer{
+    display: grid;
+    gap: 10px;
+    grid-template-rows: 100px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 5px;
+}
+
+.recBox{
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.recThree{
+    grid-column: 1/2;
+}
+
+.recFour{
+    grid-column: 2/3;
+}
+
+.recFive{
+    grid-column: 3/4;
+}
+
+.disLogo{
+    width:40%;
+}
+
+.googLogo{
+    width: 40%;
+}
+
+.tabTest{
+    margin-top: 50px;
+    border-collapse: collapse;
+    margin: auto; /*Permet de centrer automatiquement*/
+}
+
+.tabTest tr td, th{
+    border: 1px solid black;
+    font-size: x-large;
+    padding: 10px;
+    text-align: center;
+}

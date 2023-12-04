@@ -28,9 +28,7 @@
             </div>
         </div>
     </header>
-    <h1>
-        Index
-    </h1>
+    <h1 id="ancre">Index</h1>
     <section>
         <div class="imgtp">
             <div>
@@ -58,13 +56,82 @@
             <div class="box">Boite 1</div>
             <div class="box">Boite 2</div>
             <div class="box">Boite 3</div>
-            <div class="box">Boite 4</div>
+            <div class="box">Boite 4
+                <p id="ancre2"></p>
+            </div>
             <div class="box">Boite 5</div>
             <div class="box">Boite 6</div>
             <div class="box">Boite 7</div>
             <div class="box">Boite 8</div>
         </div>
+    </section>
+    <section class="trickyGrid">
+        <div class="trickyContainer"><!--Exercice 1-->
+            <div class="trickyBox one">Boite 1</div>
+            <div class="trickyBox two">Boite 2</div>
+            <div class="trickyBox three">Boite 3</div>
+            <div class="trickyBox four">Boite 4</div>
+            <div class="trickyBox five">Boite 5</div>
+            <div class="trickyBox six">Boite 6</div>
+            <div class="trickyBox seven">Boite 7</div>
+            <div class="trickyBox eight">Boite 8</div>
+        </div>
+        <div class="trickyContainer"><!--Exercice 2-->
+            <div class="trickyBox secOne">Boite 1</div>
+            <div class="trickyBox secTwo">Boite 2</div>
+            <div class="trickyBox secThree">Boite 3</div>
+            <div class="trickyBox secFour">Boite 4</div>
+            <div class="trickyBox secFive">Boite 5</div>
+            <div class="trickyBox secSix">Boite 6</div>
+            <div class="trickyBox secSeven">Boite 7</div>
+            <div class="trickyBox secEight">Boite 8</div>
+            <div class="trickyBox secNine">Boite 9
+                <div class="recursiveContainer">
+                    <div class="recBox">Box1</div>
+                    <div class="recBox">Box2</div>
+                    <div class="recBox recThree">Box3</div>
+                    <div class="recBox recFour">Box4</div>
+                    <div class="recBox recFive">Box5</div>
+                    <div class="recBox recSix">
+                        <img class="disLogo" src="Image/disney_logo.png" alt="">
+                        <img class="googLogo" src="Image/google_logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#ancre">aller vers ancre</a><br>
+        <a href="#ancre2">aller vers ancre2</a><br>
+        <a href="Links/services.html#ancreServ">aller vers ancre Service</a>
+    </section>
 
+    <section>
+        <table class="tabTest">
+            <caption>Tableau de test</caption>
+            <tr>
+                <th></th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Âge</th>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>test1</td>
+                <td>test2</td>
+                <td>test3</td>
+            </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>test1</td>
+                <td>test2</td>
+                <td>test3</td>
+            </tr>
+            <tr>
+                <th>Âge</th>
+                <td>test1</td>
+                <td>test2</td>
+                <td>test3</td>
+            </tr>
+        </table>
     </section>
     <main>
 
@@ -74,3 +141,10 @@
     </footer>
 </body>
 </html>
+
+<!--
+    Position relative: Permet de décaler l'élément par rapport à sa position normale.
+    Position absolue: Permet de décaler l'élément n'importe où sur la page(haut, bas, gauche, etc...).
+    Fonctionne sur balise inline (<a>, <p>) ou block (<div>), mais bien plus utilisé sur block que inline.
+    Point d'origine de l'élément: (0,0) qui nous permettra de le déplacer (en haut à gauche).
+-->
