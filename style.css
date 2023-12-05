@@ -264,6 +264,7 @@ button a:active{
     margin-top: 50px;
     border-collapse: collapse;
     margin: auto; /*Permet de centrer automatiquement*/
+    margin-bottom: 100px;
 }
 
 .tabTest tr td, th{
@@ -271,4 +272,8 @@ button a:active{
     font-size: x-large;
     padding: 10px;
     text-align: center;
+}
+
+#latest form{
+    margin-top: 80px;
 }
