@@ -27,13 +27,13 @@ h1{
     margin-top: 150px;
 }
 
+/*----------------------header--------------------*/
 .header{
     display: flex;
     justify-content: space-between;
     background-color: rgba(115, 132, 142, 0.665);
     align-items: center;
     border: rgba(115, 132, 142, 0.750) 3px solid;
-    display:none;
 }
 
 .header a{
@@ -54,6 +54,8 @@ h1{
     opacity: 0.8;
 }
 
+
+
 nav ul li{
     display: inline; 
     margin-right: 3em;
@@ -65,6 +67,124 @@ nav ul li a{
     text-decoration: none;
     font-size: xx-large;
 }
+
+/*------------Burger menu--------------*/
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+
+  z-index: 1;
+
+  display: none;
+
+  /*-webkit-user-select: none;
+  user-select: none;*/
+}
+
+/*Burger menu "checkbox"*/
+#menuToggle input{
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0; /*hides the checkbox*/
+    z-index: 2; /*makes it so the checkbox is on a layer above the menu icon*/
+
+    /*-webkit-touch-callout: none;*/
+}
+
+/*Burger menu bars*/
+#menuToggle span{
+    display: block;
+    width: 33px;
+    height: 4px; /*Span size, allows it to be 3 lines*/
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #232323;
+    border-radius: 3px;
+
+    z-index: 1; 
+
+    transform-origin: 4px 0px; /*Sets the origin point of the future transformation*/
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease; /*Allows for the smooth transformation of the burger menu's three bars. 
+                                  Controls speed and size of the bars' transition into the crossmark, as well as the transition of the color*/
+}
+
+/*Set the transformation origin of the first bar*/
+#menuToggle span:first-child{ 
+    transform-origin: 0% 0%;
+}
+
+/*Set the transformation origin of the third bar*/
+#menuToggle span:nth-last-child(2){  /*span:nth-last-child(2) allows for the selection of the second to last child in the parent, which is a span*/
+    transform-origin: 0% 100%;
+}
+
+ /*Rotates and moves the bars, then change their color*/
+#menuToggle input:checked ~ span{
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #cdcdcd;
+}
+
+/*Hides the bar in the middle*/
+#menuToggle input:checked ~ span:nth-last-child(3){
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*Rotates and moves the last bar in the opposite direction to form the crossmark*/
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu{
+    position: absolute; /*Locks the menu to the same position*/
+    width: 320px;
+    height: 320px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 110px;
+    background: rgba(0, 0, 0, 0.8);
+
+    transform-origin: 0% 0%;
+    /*transform: translate(0%, -100%);*/ /*Changes the direction the box slides in: (-100%, 0) for a slide from the left, (0, -100%) slides from the top*/
+    border-radius: 0 0 300px 0px;/*Makes the box into a bottom-right quarter-circle*/
+    transform: rotate(-90deg); /*Rotate it in -90 degrees from the top*/
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li{
+    padding: 10px 0;
+}
+
+#menu li a{
+    color: white;
+}
+
+#menu li a:hover{
+    color:#8360c3;
+}
+
+/*Makes the menu slide in*/
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+/*-----------------body------------------*/
 
 body{
     background-image: url(Image/marblebg2.jpg);
@@ -340,118 +460,19 @@ figure {
 */
 
 
-/*------------Burger menu--------------*/
-#menuToggle
-{
-  display: block;
-  position: relative;
-  top: 50px;
-  left: 50px;
 
-  z-index: 1;
+/*----------------------Media Queries----------------------*/
 
-  /*-webkit-user-select: none;
-  user-select: none;*/
+@media screen and (max-width: 800px) { /*Que pour les écrans avec MAX 800px. Tablette: 800px, Mobile: 425px*/
+    .header{
+        display: none;
+    }
+
+    #menuToggle{
+        display: block;
+    }
+
+    .imgtp{
+
+    }
 }
-
-/*Burger menu "checkbox"*/
-#menuToggle input{
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    top: -7px;
-    left: -5px;
-
-    cursor: pointer;
-
-    opacity: 0; /*hides the checkbox*/
-    z-index: 2; /*makes it so the checkbox is on a layer above the menu icon*/
-
-    /*-webkit-touch-callout: none;*/
-}
-
-/*Burger menu bars*/
-#menuToggle span{
-    display: block;
-    width: 33px;
-    height: 4px; /*Span size, allows it to be 3 lines*/
-    margin-bottom: 5px;
-    position: relative;
-
-    background: #232323;
-    border-radius: 3px;
-
-    z-index: 1; 
-
-    transform-origin: 4px 0px; /*Sets the origin point of the future transformation*/
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease; /*Allows for the smooth transformation of the burger menu's three bars. 
-                                  Controls speed and size of the bars' transition into the crossmark, as well as the transition of the color*/
-}
-
-/*Set the transformation origin of the first bar*/
-#menuToggle span:first-child{ 
-    transform-origin: 0% 0%;
-}
-
-/*Set the transformation origin of the third bar*/
-#menuToggle span:nth-last-child(2){  /*span:nth-last-child(2) allows for the selection of the second to last child in the parent, which is a span*/
-    transform-origin: 0% 100%;
-}
-
- /*Rotates and moves the bars, then change their color*/
-#menuToggle input:checked ~ span{
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-    background: #cdcdcd;
-}
-
-/*Hides the bar in the middle*/
-#menuToggle input:checked ~ span:nth-last-child(3){
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*Rotates and moves the last bar in the opposite direction to form the crossmark*/
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu{
-    position: absolute; /*Locks the menu to the same position*/
-    width: 320px;
-    height: 320px;
-    margin: -100px 0 0 -50px;
-    padding: 50px;
-    padding-top: 110px;
-    background: rgba(0, 0, 0, 0.8);
-
-    transform-origin: 0% 0%;
-    /*transform: translate(0%, -100%);*/ /*Changes the direction the box slides in: (-100%, 0) for a slide from the left, (0, -100%) slides from the top*/
-    border-radius: 0 0 300px 0px;/*Makes the box into a bottom-right quarter-circle*/
-    transform: rotate(-90deg); /*Rotate it in -90 degrees from the top*/
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-}
-
-#menu li{
-    padding: 10px 0;
-}
-
-#menu li a{
-    color: white;
-}
-
-#menu li a:hover{
-    color:#8360c3;
-}
-
-/*Makes the menu slide in*/
-#menuToggle input:checked ~ ul
-{
-  transform: none;
-}
-
-/*test*/
