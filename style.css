@@ -37,7 +37,7 @@ h1{
     position: fixed;
     width:100%;
     top: 0;
-    z-index: 3;
+    z-index: 2;
 }
 
 .header a{
@@ -513,6 +513,7 @@ figure {
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
+    z-index: 2;
 }
 
 .overlay:target{
@@ -521,15 +522,29 @@ figure {
 }
 
 .popUp{
-    margin: 70px auto;
-    padding: 20px;
+    margin: 200px auto;
+    padding: 50px;
     background: #fff;
     border-radius: 5px;
     width: 30%;
     position: relative;
 }
 
+.close{
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
 
+.content {
+    max-height: 30%;
+    overflow: auto;
+  }
 
 
 /*----------------------Media Queries----------------------*/
